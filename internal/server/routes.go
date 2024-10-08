@@ -15,6 +15,18 @@ func (s *Server) RegisterRoutes() http.Handler {
 
 	r.Get("/", s.HelloWorldHandler)
 
+	r.Route("/api", func(r chi.Router) {
+		r.Route("/v1", func(r chi.Router) {
+			r.Route("/apis", func(r chi.Router) {
+				r.Post("/", s.apiController.CreateAPI)
+				r.Get("/", s.apiController.ListAPIs)
+				r.Get("/{id}", s.apiController.GetAPIByID)
+				r.Put("/{id}", s.apiController.UpdateAPI)
+				r.Delete("/{id}", s.apiController.DeleteAPI)
+			})
+		})
+	})
+
 	return r
 }
 
