@@ -31,3 +31,9 @@ main
 
 # OS X generated file
 .DS_Store
+
+# Air
+.air.toml
+
+#Test db
+test.db
