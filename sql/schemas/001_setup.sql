@@ -27,6 +27,8 @@ CREATE TABLE apis (
     forum_reference TEXT,
     tags TEXT,
     swagger TEXT,
+    apm_link TEXT,
+    team      TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
